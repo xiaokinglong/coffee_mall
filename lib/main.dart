@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'layout/index.dart';
 
+import './router/index.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -11,6 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: "/login",
+      routes: routes,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
