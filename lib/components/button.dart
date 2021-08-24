@@ -13,15 +13,10 @@ class Button extends StatelessWidget {
         color: Color.fromRGBO(50, 74, 89, 1),
         borderRadius: BorderRadius.circular(64),
       ),
-      child: InkWell(
-        onTap: () {
-          print(12);
-        },
-        child: Center(
-          child: Icon(
-            Iconfont.chaozhijifen,
-            color: Colors.white,
-          ),
+      child: Center(
+        child: Icon(
+          Iconfont.chaozhijifen,
+          color: Colors.white,
         ),
       ),
     );
