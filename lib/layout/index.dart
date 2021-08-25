@@ -41,7 +41,7 @@ class _LayoutPageState extends State<LayoutPage> {
       title: Text('购物车'),
     ),
     BottomNavigationBarItem(
-      icon: Icon(Iconfont.a1zhanshigouwu),
+      icon: Icon(Iconfont.coffeeorder),
       title: Text('我'),
     ),
   ];

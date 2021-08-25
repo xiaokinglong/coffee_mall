@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                             hintStyle: TextStyle(
                               color: Color.fromRGBO(193, 199, 208, 1),
                             ),
-                            prefixIcon: Icon(Iconfont.a1zhanshigouwu),
+                            prefixIcon: Icon(Iconfont.coffeeuser),
                             // border: OutlineInputBorder(
                             //   borderSide: BorderSide(
                             //     width: 0,
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                             hintStyle: TextStyle(
                               color: Color.fromRGBO(193, 199, 208, 1),
                             ),
-                            prefixIcon: Icon(Iconfont.a1zhanshigouwu),
+                            prefixIcon: Icon(Iconfont.coffeepass),
                             // border: OutlineInputBorder(
                             //   borderSide: BorderSide(
                             //     width: 0,

@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
         children: <Widget>[
           InkWell(
             child: Container(
-              child: Icon(Icons.backup_outlined),
+              child: Icon(Iconfont.coffeeleft),
             ),
           ),
           Container(
@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-              child: Icon(Icons.backup_outlined),
+              child: Icon(Iconfont.coffeecar),
             ),
           ),
         ],
