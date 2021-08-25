@@ -125,6 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                   margin: EdgeInsets.only(bottom: 134),
                   child: GestureDetector(
                     onTap: () {
+                      Navigator.pushNamed(context, '/forgot');
                       print('跳转到找回密码的页面');
                     },
                     child: Text(
@@ -151,16 +152,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 Container(
-                  // child: RichText(
-                  //   text: TextSpan(children: <InlineSpan>[
-                  //     TextSpan(
-                  //       text: 'New member?',
-
-                  //       /// 必须设置stlye
-                  //       style: TextStyle(),
-                  //     ),
-                  //   ]),
-                  // ),
                   child: Row(
                     children: [
                       Text(
@@ -174,6 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                       GestureDetector(
                         onTap: () {
                           print('跳转到注册的页面');
+                          Navigator.pushNamed(context, '/sign_up');
                         },
                         child: Text(
                           'Sign up',

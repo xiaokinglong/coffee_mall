@@ -13,12 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: "/login",
+      initialRoute: "/layout",
       routes: routes,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          // primarySwatch: Colors.white,
+          // primarySwatch: Color.fromRGBO(50, 74, 89, 1),
+          ),
       home: LayoutPage(),
     );
   }

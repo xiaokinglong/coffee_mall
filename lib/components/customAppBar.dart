@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:supermall/untils/Iconfont.dart';
 
 // TODO: actions 和title 没有进行处理
@@ -21,6 +22,9 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
             child: Container(
               child: Icon(Iconfont.coffeeleft),
             ),

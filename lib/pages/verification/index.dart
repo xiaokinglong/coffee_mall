@@ -11,6 +11,6 @@ class VerificationPage extends StatefulWidget {
 class _VerificationPageState extends State<VerificationPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
