@@ -3,6 +3,9 @@ import 'package:supermall/components/button.dart';
 import 'package:supermall/components/customAppBar.dart';
 import 'package:supermall/untils/Iconfont.dart';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:supermall/untils/screenutil.dart';
+
 // TODO: 需要跳转的页面还没有写 然后需要替换正确的icon;
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -13,8 +16,25 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
+  bool isHidePass = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      isHidePass = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(
+        BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+        designSize: Size(375, 792),
+        orientation: Orientation.portrait);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -23,28 +43,32 @@ class _LoginPageState extends State<LoginPage> {
           CustomAppBar(),
           Container(
             padding: EdgeInsets.only(
-              left: 41,
-              right: 41,
+              left: duSetWidth(41),
+              right: duSetWidth(41),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   padding: EdgeInsets.only(
-                    top: 50,
+                    top: duSetHeight(50),
                   ),
-                  margin: EdgeInsets.only(bottom: 24),
+                  margin: EdgeInsets.only(
+                    bottom: duSetHeight(24),
+                  ),
                   child: Text(
                     'Sign in',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: duSetFontSize(22),
                       fontWeight: FontWeight.w500,
                       color: Color.fromRGBO(24, 29, 45, 1),
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 46),
+                  margin: EdgeInsets.only(
+                    bottom: duSetHeight(46),
+                  ),
                   child: Text(
                     'Welcome back',
                     style: TextStyle(
@@ -71,16 +95,11 @@ class _LoginPageState extends State<LoginPage> {
                               color: Color.fromRGBO(193, 199, 208, 1),
                             ),
                             prefixIcon: Icon(Iconfont.coffeeuser),
-                            // border: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     width: 0,
-                            //     color: Color.fromRGBO(193, 199, 208, 1),
-                            //     style: BorderStyle.solid,
-                            //   ),
-                            // ),
                           ),
                         ),
-                        margin: EdgeInsets.only(bottom: 36),
+                        margin: EdgeInsets.only(
+                          bottom: duSetHeight(36),
+                        ),
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
@@ -92,11 +111,13 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(bottom: 24),
+                        margin: EdgeInsets.only(
+                          bottom: duSetHeight(24),
+                        ),
                         // 密码
                         child: TextField(
                           /// 密码形式
-                          obscureText: true,
+                          obscureText: isHidePass,
 
                           /// 键盘的类型 相当于 input的type
                           keyboardType: TextInputType.text,
@@ -106,13 +127,14 @@ class _LoginPageState extends State<LoginPage> {
                               color: Color.fromRGBO(193, 199, 208, 1),
                             ),
                             prefixIcon: Icon(Iconfont.coffeepass),
-                            // border: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     width: 0,
-                            //     color: Color.fromRGBO(193, 199, 208, 1),
-                            //     style: BorderStyle.solid,
-                            //   ),
-                            // ),
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isHidePass = !isHidePass;
+                                });
+                              },
+                              child: Icon(Iconfont.coffeeeyes),
+                            ),
                           ),
                         ),
                       ),
@@ -122,7 +144,9 @@ class _LoginPageState extends State<LoginPage> {
                 // 按钮
                 Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 134),
+                  margin: EdgeInsets.only(
+                    bottom: duSetHeight(134),
+                  ),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/forgot');
@@ -141,7 +165,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Container(
                   alignment: Alignment.centerRight,
-                  margin: EdgeInsets.only(bottom: 129),
+                  margin: EdgeInsets.only(
+                    bottom: duSetHeight(129),
+                  ),
                   child: InkWell(
                     onTap: () {
                       print('登陆成功之后 跳转页面');
