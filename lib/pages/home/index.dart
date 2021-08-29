@@ -17,11 +17,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(375, 792),
-        orientation: Orientation.portrait);
+      BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width,
+          maxHeight: MediaQuery.of(context).size.height),
+      designSize: Size(375, 792),
+      orientation: Orientation.portrait,
+    );
     return Scaffold(
       body: Column(
         children: [

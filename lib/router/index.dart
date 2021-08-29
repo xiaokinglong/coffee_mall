@@ -1,5 +1,6 @@
 import 'package:supermall/layout/index.dart';
 import 'package:supermall/pages/address/index.dart';
+import 'package:supermall/pages/coffee_details/index.dart';
 import 'package:supermall/pages/forgot/index.dart';
 import 'package:supermall/pages/login/index.dart';
 import 'package:supermall/pages/order/index.dart';
@@ -19,4 +20,5 @@ var routes = {
   '/order': (context) => OrderPage(),
   '/rewards': (context) => RewardsPage(),
   '/address': (context) => AddressPage(),
+  '/CoffeeDetailsPage': (context) => CoffeeDetailsPage(),
 };

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supermall/pages/car/index.dart';
-import 'package:supermall/pages/comments/index.dart';
+import 'package:supermall/pages/gift/index.dart';
 import 'package:supermall/pages/home/index.dart';
 import 'package:supermall/pages/order/index.dart';
 import 'package:supermall/pages/user/index.dart';
@@ -49,7 +49,7 @@ class _LayoutPageState extends State<LayoutPage> {
 
   var pageList = [
     HomePage(),
-    CommentsPage(),
+    GiftPage(),
     OrderPage(),
     // VipPage(),
     // CarPage(),
@@ -64,7 +64,7 @@ class _LayoutPageState extends State<LayoutPage> {
     // TODO: implement initState
     super.initState();
     setState(() {
-      currentIndex = 0;
+      currentIndex = 1;
       currentPage = pageList[currentIndex];
     });
   }

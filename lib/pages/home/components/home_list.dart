@@ -42,28 +42,30 @@ class _Home_ListState extends State<Home_List> {
             ),
           ),
           Expanded(
-            child: GridView(
-              padding: EdgeInsets.all(16),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: duSetWidth(16),
-                crossAxisSpacing: duSetHeight(16),
-              ),
-              children: [
-                Coffee_Card(),
-                Coffee_Card(),
-                Coffee_Card(),
-                Coffee_Card(),
-                Coffee_Card(),
-                Coffee_Card(),
-                Coffee_Card(),
-                Coffee_Card(),
-              ],
-              // gridDelegate: 2,
-              // children: [
-              //
-              // ],
-            ),
+            child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: duSetWidth(16),
+                  crossAxisSpacing: duSetHeight(16),
+                ),
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index) {
+                  return Coffee_Card();
+                }),
+            // child: GridView(
+            //   padding: EdgeInsets.all(16),
+            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //     crossAxisCount: 2,
+            //     mainAxisSpacing: duSetWidth(16),
+            //     crossAxisSpacing: duSetHeight(16),
+            //   ),
+            //   children: [
+            //     Coffee_Card(),
+            //     Coffee_Card(),
+            //     Coffee_Card(),
+            //     Coffee_Card(),
+            //   ],
+            // ),
           )
         ],
       ),
