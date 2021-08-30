@@ -11,7 +11,12 @@ class WelcomePage extends StatelessWidget {
       //   child: Text('普通的咖啡馆'),
       // ),
       body: Center(
-        child: Button(),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/login');
+          },
+          child: Button(),
+        ),
       ),
     );
   }
