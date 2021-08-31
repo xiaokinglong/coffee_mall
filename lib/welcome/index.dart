@@ -7,9 +7,6 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Center(
-      //   child: Text('普通的咖啡馆'),
-      // ),
       body: Center(
         child: GestureDetector(
           onTap: () {

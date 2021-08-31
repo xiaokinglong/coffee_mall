@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: "/welcome",
+      initialRoute: "/car",
       routes: routes,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
