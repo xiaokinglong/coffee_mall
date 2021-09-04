@@ -64,7 +64,7 @@ class _LayoutPageState extends State<LayoutPage> {
     // TODO: implement initState
     super.initState();
     setState(() {
-      currentIndex = 2;
+      currentIndex = 0;
       currentPage = pageList[currentIndex];
     });
   }

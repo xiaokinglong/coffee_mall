@@ -123,7 +123,7 @@ class _CarPageState extends State<CarPage> {
               Positioned(
                 top: 0,
                 width: MediaQuery.of(context).size.width,
-                child: CustomAppBar(),
+                child: CustomAppBar(title: '购物车'),
               ),
               Positioned(
                 bottom: 0,

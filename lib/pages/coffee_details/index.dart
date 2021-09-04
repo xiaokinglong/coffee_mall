@@ -3,8 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:supermall/components/customAppBar.dart';
 import 'package:supermall/untils/screenutil.dart';
 
+class DetailsData {
+  final String title;
+  final String image;
+  DetailsData(this.title, this.image);
+}
+
 class CoffeeDetailsPage extends StatefulWidget {
-  CoffeeDetailsPage({Key? key}) : super(key: key);
+  CoffeeDetailsPage({
+    Key? key,
+    this.title,
+    this.image,
+  }) : super(key: key);
+
+  final title;
+  final image;
 
   @override
   _CoffeeDetailsPageState createState() => _CoffeeDetailsPageState();
@@ -21,6 +34,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.title);
     ScreenUtil.init(
       BoxConstraints(
         maxWidth: MediaQuery.of(context).size.width,
@@ -34,7 +48,9 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
       body: SafeArea(
         child: Column(
           children: [
-            CustomAppBar(),
+            CustomAppBar(
+              title: '咖啡详情',
+            ),
             Expanded(
               child: Container(
                 margin: EdgeInsets.only(
@@ -50,8 +66,11 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                         color: Color.fromRGBO(247, 248, 251, 1),
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
-                      child: Image.asset(
-                        'assets/images/1.png',
+                      child: Hero(
+                        tag: widget.image,
+                        child: Image.network(
+                          widget.image,
+                        ),
                       ),
                     ),
 
@@ -75,7 +94,8 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'Americano',
+                            /// 参数
+                            widget.title,
                             style: TextStyle(
                               color: Color.fromRGBO(0, 24, 51, 1),
                               fontSize: 12,

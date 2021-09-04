@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supermall/mock/goods.dart';
 import 'package:supermall/untils/screenutil.dart';
 
 import 'coffee_card.dart';
@@ -48,9 +49,12 @@ class _Home_ListState extends State<Home_List> {
                   mainAxisSpacing: duSetWidth(16),
                   crossAxisSpacing: duSetHeight(16),
                 ),
-                itemCount: 10,
+                itemCount: goodsListMock.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Coffee_Card();
+                  return Coffee_Card(
+                    title: goodsListMock[index]['title'],
+                    image: goodsListMock[index]['preview'],
+                  );
                 }),
             // child: GridView(
             //   padding: EdgeInsets.all(16),

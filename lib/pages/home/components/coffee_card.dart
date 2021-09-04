@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:supermall/pages/coffee_details/index.dart';
 import 'package:supermall/untils/screenutil.dart';
 
 class Coffee_Card extends StatefulWidget {
-  Coffee_Card({Key? key}) : super(key: key);
+  Coffee_Card({Key? key, this.title, this.image}) : super(key: key);
+
+  final title;
+  final image;
 
   @override
   _Coffee_CardState createState() => _Coffee_CardState();
@@ -27,16 +31,28 @@ class _Coffee_CardState extends State<Coffee_Card> {
       ),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, '/CoffeeDetailsPage');
+          Navigator.push(
+            context,
+            new MaterialPageRoute(
+              builder: (context) => new CoffeeDetailsPage(
+                title: widget.title,
+                image: widget.image,
+              ),
+            ),
+          );
+          // Navigator.pushNamed(context, '/CoffeeDetailsPage');
         },
         child: Column(
           children: [
             Container(
               width: duSetWidth(102),
               height: duSetHeight(75),
-              child: Image.asset(
-                'assets/images/1.png',
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: widget.image,
+                child: Image.network(
+                  widget.image,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Container(
@@ -44,7 +60,8 @@ class _Coffee_CardState extends State<Coffee_Card> {
                 top: duSetHeight(10),
               ),
               child: Text(
-                'Americano',
+                widget.title,
+                maxLines: 1,
                 style: TextStyle(
                   color: Color.fromRGBO(0, 24, 51, 1),
                   fontSize: 14,

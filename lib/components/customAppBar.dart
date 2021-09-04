@@ -8,8 +8,8 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key, this.title, this.actions}) : super(key: key);
 
   // 不是必传的
-  final Widget? title;
-  final Widget? actions;
+  final title;
+  final actions;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           Container(
-            child: Text('CarPage'),
+            child: Text(title),
           ),
           InkWell(
             child: Container(

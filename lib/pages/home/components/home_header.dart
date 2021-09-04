@@ -54,7 +54,12 @@ class Home_Header extends StatelessWidget {
                   margin: EdgeInsets.only(
                     left: duSetWidth(27),
                   ),
-                  child: Icon(Iconfont.coffeeuser),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/car');
+                    },
+                    child: Icon(Iconfont.coffeeuser),
+                  ),
                 )
               ],
             ),
